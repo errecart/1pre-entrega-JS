@@ -1,0 +1,3 @@
+class cuentas{
+    constructoy
+}

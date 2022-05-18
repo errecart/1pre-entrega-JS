@@ -1,0 +1,75 @@
+
+class Empreza {
+    constructor(nombre, anioCreacion, fundador) {
+        this.nombre = nombre;
+        this.anioCreacion = anioCreacion;
+        this.fundador = fundador;
+        this.cuentas = [];
+    }
+    agregarCuenta(cuenta) {
+        this.cuentas.push(cuenta);
+    }
+}
+
+class Cuenta {
+    constructor(nombreTitular, tipoCuenta, diasGratis) {
+        this.nombreTitular = nombreTitular;
+        this.tipoCuenta = tipoCuenta;
+        this.diasGratis = diasGratis;
+    }
+}
+
+
+// =======================================================================
+
+// const nombreEmpreza = prompt("ingrese nombre de la empreza");
+// const anioCreacion = prompt("ingrese anio de creacion");
+// const nombreFundador = prompt("ingrese el nombre del fundador");
+
+// const empreza1 = new Empreza(nombreEmpreza,anioCreacion,nombreFundador)
+
+// console.log(empreza1);
+
+const eureka = new Empreza( "EurekaK", 2002, "Jose")
+
+// ======================================================================
+
+// const cuenta1 = new Cuenta("Juan", "silvre", 20)
+// const cuenta2 = new Cuenta("jose", "Gold", 30)
+// const cuenta3 = new Cuenta("Ana", "Gold",10)
+// const cuenta4 = new Cuenta("Nico", "silver", 05)
+
+
+// eureka.agregarCuenta(cuenta1);
+// eureka.agregarCuenta(cuenta2);
+// eureka.agregarCuenta(cuenta3);
+// eureka.agregarCuenta(cuenta4);
+
+// =======================================================================
+
+let opcion = prompt("ingrese 1 para agregar cuenta y enter para salir ")
+
+while (opcion == 1) {
+    const nombreTitular = prompt("ingrese nombre del Miembro")
+    const tipoCuenta = prompt("ingrese tipo de cuenta")
+    let diasGratis = 0;
+    if (tipoCuenta == "gold") {
+        diasGratis = 30;
+    } else if (tipoCuenta == "silver") {
+        diasGratis = 10;
+    }
+    const cuentaCreada = new Empreza(nombreTitular, tipoCuenta, diasGratis);
+    eureka.agregarCuenta(cuentaCreada);
+    opcion = prompt("ingrese nombre del Miembro")
+}
+
+console.log(eureka.cuentas)
+
+
+
+
+
+
+
+
+
